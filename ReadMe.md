@@ -9,7 +9,12 @@
  * Commits com novas explicações ✔️
  * Fazer commits com bugs ❌
  * Fazer commits de outras linguagens ❌
+## 🏆 Metas:
+ 🔗 [Lista de exercícios - Introdução](http://www.tads.ufpr.br/pluginfile.php/8080/mod_resource/content/0/Aula%2001%20-%20Exerc%C3%ADcios%20-%20Introdu%C3%A7%C3%A3o%20ao%20Java.pdf "Lista de exercícios - Introdução") - 🔄 Incompleto  
+🔗 [Lista de exercícios 2 LPOO](http://www.tads.ufpr.br/pluginfile.php/8082/mod_resource/content/0/Aula%2002%20e%2003%20-%20Exerc%C3%ADcios%20-%20Sintaxe%20Java.pdf) - - 🔄 Incompleto 
 
+## 🤖 Contribuidores : 
+* Adriel - 👦🏾
 ## 📚Dicas:
 
  > ##  🔤 Formatação no output 
