@@ -1,11 +1,12 @@
-# 💎Exercicios de JAVA™️ ☕
+# Exercícios de JAVA™️ ☕
 
-### Repositório criado para compartilhar exercicios e trabalhos de Java realizados na **UFPR**🏫.
+### Repositório criado para compartilhar exercicios,trabalhos,dicas,explicações e ajuda sobre Java™️ - **UFPR** 🏫.
 ![coder](https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif)
 
 ## 📜Regras :
  * Commits de novos trabalhos e exercicios resolvidos ✔️
  * Lista de exercicios de Java para serem resolvidos ✔️
+ * Commits com novas explicações ✔️
  * Fazer commits com bugs ❌
  * Fazer commits de outras linguagens ❌
 
@@ -109,7 +110,7 @@ System.out.printf("Informe uma cadeia de caracteres:\n");
 s = read.nextLine();  
  ```
 > ## ⚙️ Metodos 
-#### Valor de retorno
+* #### Valor de retorno
 Um método pode retornar o valor de uma variável. O tipo do valor de retorno é definido antes do nome do método. O método deve retornar um dado desse tipo através do comando return.
 Ex.: 
 ```java
@@ -120,11 +121,11 @@ public static float multasDoMes(int quantDvds, float valueDvds) {
     }
 ```
 
-#### Public
+* #### Public
 É o modificador de acesso do método. Usando este modificador o método pode ser acessado por qualquer classe dentro (e fora) do projeto.
 Outros modificadores são `protected`, `private` ou **sem modificador**. Aqui pode-se ler mais sobre os modificadores de acesso do Java.
 
-#### Static
+* #### Static
 Define o método como estático, isso quer dizer que a classe não precisa ser instanciada para chamar este método.
 No exemplo, tenho a classe `Cliente` com os métodos (estático) `FazerAlgo()` e (não-estático) `FazerAlgoDois()`, o uso seria assim:
 ```java
@@ -133,5 +134,5 @@ cliente.FazerAlgoDois(); // Este é o método não-estático
 
 Cliente.FazerAlgo(); // Este é o método estático
 ```
-#### Void
+* ####  Void
 É tipo de retorno do método. Este tipo de retorno significa vazio/nada, o método não dá retorno nenhum. Os métodos podem retornar qualquer tipo do seu projeto, até mesmo os criados por você.
