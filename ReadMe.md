@@ -1,7 +1,9 @@
-# Exercícios de JAVA™️ ☕
+<div align="center">
+<h1 align="center">Exercícios de JAVA™️ ☕</h1>
 
 ### Repositório criado para compartilhar exercicios,trabalhos,dicas,explicações e ajuda sobre Java™️ - **UFPR** 🏫.
-![coder](https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif)
+<img src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" alt="Front End " width="700"/>
+</div>
 
 ## 📜Regras :
  * Commits de novos trabalhos e exercicios resolvidos ✔️
@@ -114,7 +116,7 @@ read.nextLine();//Esvazia o buffer do teclado
 System.out.printf("Informe uma cadeia de caracteres:\n");  
 s = read.nextLine();  
  ```
-> ## ⚙️ Metodos 
+> ## ⚙️ Métodos 
 * #### Valor de retorno
 Um método pode retornar o valor de uma variável. O tipo do valor de retorno é definido antes do nome do método. O método deve retornar um dado desse tipo através do comando return.
 Ex.: 
