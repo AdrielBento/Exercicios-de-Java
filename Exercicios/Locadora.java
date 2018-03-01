@@ -1,5 +1,11 @@
-import org.omg.CORBA.PUBLIC_MEMBER;
+package javaufpr.exercicios.auladois;
 
+
+/**Classe para objetos do tipo Funcionários, onde serão contidos, valores e métodos para o mesmo.
+
+ * @author Adriel Bento 
+
+ */
 public class Locadora {
     public static void main(String[] args) {
         int quantDvds = Integer.parseInt(args[0]);
@@ -10,9 +16,9 @@ public class Locadora {
     }
 
     public static float faturamento(int quantDvds, float valueDvds) {
-        float faturaPorMes = (quantDvds / 3) * valueDvds;
-        float fatura = faturaPorMes * 12;
-        return fatura;
+        float faturaPorMes = (quantDvds / 3) * valueDvdsf;
+        float fatura = faturaPorMesf * 12;
+        return faturaf;
     }
 
     public static float multasDoMes(int quantDvds, float valueDvds) {
