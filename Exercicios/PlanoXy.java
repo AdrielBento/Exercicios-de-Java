@@ -9,10 +9,10 @@ public class PlanoXy {
         String pontoA = ler.nextLine();
         System.out.print("Digite o ponto B :");
         String pontoB = ler.nextLine();
-
+ 
         String[] cordenadasA = pontoA.split(",");
         String[] cordenadasB = pontoB.split(",");
-
+ 
         System.out.println(Calc(cordenadasA, cordenadasB));
     }
 
