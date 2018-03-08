@@ -35,7 +35,7 @@ public class BonusAnual {
             break;
 
         case 5:
-            bonus = (salario * 0.5f) / 100;
+            bonus = (salario * 0.5f);
             break;
         }
         System.out.printf("Seu bonus Anual  e de %f", bonus);
