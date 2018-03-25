@@ -20,6 +20,7 @@ b = -(b);
  x2 = (b + delta )/div;
  System.out.println("X':"+x1);
  System.out.println("X'':"+x2);
+ System.out.println();
 }
 
 }
