@@ -48,7 +48,7 @@ public class Media {
 		
 		
 //		NumberFormatException
-//	InputMismatchException = ExeceÃ§Ã£o paraao inserir um tipo de dado inesperado 
+//	InputMismatchException = Execeção paraao inserir um tipo de dado inesperado 
 		
 	}
 	

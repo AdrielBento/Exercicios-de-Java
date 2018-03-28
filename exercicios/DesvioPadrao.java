@@ -17,7 +17,7 @@ public class DesvioPadrao {
 		Double amostras[] = new Double[numAmostras];
 		
 		while(i<=numAmostras-1) {			
-			System.out.printf("Digite o %dÂ° valor :",i+1);
+			System.out.printf("Digite o %d° valor :",i+1);
 			amostras[i] = read.nextDouble();	
 			i++;
 		}
@@ -25,18 +25,20 @@ public class DesvioPadrao {
 		for(Double a : amostras) {
 			media+=a;
 		}
-		//Determina a mÃ©dia aritimÃ©tica 
+		//Determina a média aritimética 
 		media = media/numAmostras;
+		//System.out.printf("media %f",media);
 		
 		for(Double a : amostras) {
 			var+= Math.pow((a-media),2);
+			
 		}
-		//Determina a variÃ¢ncia populacional  ou variÃ¢ncia amostral  numamostras-1
-		var = var/numAmostras;
+		//Determina a variância populacional  ou variância amostral  numamostras-1
+		var = var/(numAmostras-1);
 		
-		dp=Math.sqrt(var);
+		dp=Math.sqrt(var) ;
 	
-		System.out.printf("Desvio padrÃ£o : %.2f\n VariÃ¢ncia : %.2f",dp,var);
+		System.out.printf("Desvio padrão : %.2f\n Variância : %.2f",dp,var);
 		
 		
 	}
