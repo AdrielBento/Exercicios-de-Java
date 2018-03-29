@@ -35,10 +35,10 @@ public class Empresa {
 				
 					System.out.println("Nome do Funcionario");
 					StrFuncionario[i] = read.next();
-					read.next();
 					System.out.println("Salário do funcionario");
 					DlbFuncionario[i] = read.nextDouble();
 					i++;
+					read.nextLine();
 				}catch ( Exception e) {
 					System.out.println("Erro ao inserir");
 				}
@@ -50,7 +50,15 @@ public class Empresa {
 			}
 		
 		  media = total/cont;				  
-		  System.out.printf("A media salarial da empresa é :%.2f ",media);				  
+		  System.out.printf("A media salarial da empresa é :%.2f\n",media);	
+		  i=0;
+		  for(Double v: DlbFuncionario) {
+			  
+			  if(v>media) {
+			  System.out.printf("Salarios acima da media\n Nome : %s  Salario : %.2f ",StrFuncionario[i],v);	
+			  }
+			  i++;
+		  }
 				  
 	}
 
