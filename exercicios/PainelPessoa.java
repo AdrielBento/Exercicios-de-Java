@@ -13,7 +13,8 @@ public class PainelPessoa {
 		System.out.println("Idade :");
 		idade = read.nextInt();
 		System.out.println("Endereco :");
-		endereco = read.next();
+		read.nextLine();
+		endereco = read.nextLine();
 		
 		
 		p.cadastra(nome, idade, endereco);
