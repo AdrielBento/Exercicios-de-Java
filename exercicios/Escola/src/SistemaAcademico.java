@@ -6,16 +6,27 @@ import java.util.*;
 
 public class SistemaAcademico {
 
-	public static ArrayList<Aluno> alunos = new ArrayList<Aluno>();
+	// public static ArrayList<Aluno> alunos = new ArrayList<Aluno>();
 	public static Scanner read = new Scanner(System.in);
-
+	public static Aluno[] alunos = new Aluno[1];
+	public static int qt = 0;
 	public static void main(String[] args) {
-		int opcao = 0;
+		int opcao=0,tam = 0;
+	
+		System.out.println("Quantidade de alunos ques serão cadastrado?");
+		tam = read.nextInt();
+		qt = tam;
+		alunos = new Aluno[tam];
+		String disciplina[] = new String [4];
 
-		while (opcao != 7) {
+
+
+
+		while (opcao != 8) {
 			try {
+			
 				System.out.println(
-						"1-Cadastrar Aluno\n2-Excluir aluno por nome\n3-Listar Alunos\n4-Matricular Aluno em Disciplina\n5-Cancelar Matricula\n6-Imprimir lista Alunos e Disciplinas Matriculadas\n7-Sair\n");
+						"1-Cadastrar Aluno\n2-Excluir aluno por nome\n3-Listar Alunos\n4-Matricular Aluno em Disciplina\n5-Cancelar Matricula\n6-Imprimir lista Alunos e Disciplinas Matriculadas\n7-Buscar dados do aluno\n8-Sair\n");
 				
 				opcao = read.nextInt();
 				
@@ -51,7 +62,7 @@ public class SistemaAcademico {
 			str2 = read.next();
 			aux = buscaAluno(str);
 			if (aux >= 0) {
-				System.out.printf("%s", matricularAlunoEmDisciplinas(alunos.get(aux), str2));
+				System.out.printf("%s", matricularAlunoEmDisciplinas(alunos[aux], str2));
 			} else {
 				System.out.println("Aluno não cadastrado.Por favor  cadastrar antes de matricular");
 			}
@@ -65,15 +76,15 @@ public class SistemaAcademico {
 			aux = buscaAluno(str);
 
 			if (aux >= 0) {
-				ArrayList<String> disci = new ArrayList<String>();
-				disci = alunos.get(aux).getDisciplinasMatriculadas();
-				for (int i = 0; i < disci.size(); i++) {
+				String disci[] = new String[qt];
+				disci = alunos[aux].getDisciplinas();
+				for (int i = 0; i < disci.length; i++) {
 
-					if (disci.get(i).equals(str2)) {
-						System.out.printf("%s", cancelaMatricula(alunos.get(aux), str2));
+					if (disci[i].equals(str2)) {
+						System.out.printf("%s", cancelaMatricula(alunos[i], str2));
 						break;
-					} else if (i > disci.size()) {
-						System.out.printf("O aluno %s nao foi matriculado nessa disciplina", alunos.get(aux).getNome());
+					} else if (i >  disci.length) {
+						System.out.printf("O aluno %s nao foi matriculado nessa disciplina", alunos[aux].getNome());
 					}
 				}
 			} else {
@@ -83,8 +94,21 @@ public class SistemaAcademico {
 		case 6:
 			imprimirListaDeAlunoseDisciplinas();
 			break;
+			
+		case 7:
+		
+			System.out.printf("Aluno: ");
+			str = read.next();
+			//aux = buscaAluno(str);
+			imprimeAluno(str);
+			
+		break;
+		
+		case 8:
+			System.out.println("Volte sempre !!!!!");
+			break;
 
-		}
+		 }
 
 	}
 
@@ -120,17 +144,29 @@ public class SistemaAcademico {
 	}
 
 	public static void cadastrarAluno(Aluno aluno) {
-		alunos.add(aluno);
-		System.out.printf("Aluno cadastrado com sucesso\n\n\n\n");
+		
+		for(int i=0;i<alunos.length;i++){
 
+			if(alunos[i]== null){
+				alunos[i]= aluno;
+				System.out.printf("Aluno cadastrado com sucesso\n\n\n\n");
+				break;
+			}
+		}
 	}
 
 	public static void excluirAlunoPorNome(String nome) {
-		for (int i = 0; i < alunos.size(); i++) {
+		//adriel,jose,maria,paulo;
+		Aluno aux;
+		for (int i = 0; i < alunos.length; i++) {
 
-			if (alunos.get(i).getNome().equals(nome)) {
-				System.out.printf("Aluno %s foi removido\n", alunos.get(i).getNome());
-				alunos.remove(i);
+			if (alunos[i].getNome().equals(nome)) {
+				System.out.printf("Aluno %s foi removido\n", nome);
+				
+				for(int j = i+1;j<alunos.length;j++){
+					alunos[j-1] = alunos[j];
+				}
+				alunos[alunos.length-1] = null;
 				break;
 			}
 
@@ -140,16 +176,19 @@ public class SistemaAcademico {
 	public static void listarAlunos() {
 
 		for (Aluno aluno : alunos) {
+			if(aluno!=null)
 			System.out.printf("Nome:%s\n", aluno.getNome());
-		}
+		}	
 	}
 
 	public static int buscaAluno(String nome) {
 		int indice = -1;
-		for (int i = 0; i < alunos.size(); i++) {
 
-			if (alunos.get(i).getNome().equals(nome)) {
+		for (int i = 0; i < alunos.length; i++) {
+
+			if (alunos[i].getNome().equals(nome)) {
 				indice = i;
+				break;
 			}
 		}
 		return (indice >= 0) ? indice : 0;
@@ -165,7 +204,22 @@ public class SistemaAcademico {
 
 	public static void imprimirListaDeAlunoseDisciplinas() {
 		for (Aluno aluno : alunos) {
-			System.out.printf("Nome : %s   Disciplinas:%s\n", aluno.getNome(), aluno.getDisciplinasMatriculadas());
+			aluno.imprime();
+		}
+		
+	}
+	
+	public static void imprimeAluno(String nome) {
+		
+		for (int i = 0; i < alunos.length; i++) {
+
+			if (alunos[i].getNome().equals(nome)) {
+				//System.out.printf("Aluno %s foi removido\n", alunos.get(i).getNome());
+				alunos[i].imprime();
+				break;
+			}
+
 		}
 	}
+	
 }
