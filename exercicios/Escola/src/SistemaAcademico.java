@@ -10,16 +10,15 @@ public class SistemaAcademico {
 	public static Scanner read = new Scanner(System.in);
 	public static Aluno[] alunos = new Aluno[1];
 	public static int qt = 0;
+	
 	public static void main(String[] args) {
 		int opcao=0,tam = 0;
 	
-		System.out.println("Quantidade de alunos ques ser√£o cadastrado?");
+		System.out.println("Quantidade de alunos ques ser„o cadastrado?");
 		tam = read.nextInt();
 		qt = tam;
 		alunos = new Aluno[tam];
 		String disciplina[] = new String [4];
-
-
 
 
 		while (opcao != 8) {
@@ -64,7 +63,7 @@ public class SistemaAcademico {
 			if (aux >= 0) {
 				System.out.printf("%s", matricularAlunoEmDisciplinas(alunos[aux], str2));
 			} else {
-				System.out.println("Aluno n√£o cadastrado.Por favor  cadastrar antes de matricular");
+				System.out.println("Aluno n„o cadastrado.Por favor  cadastrar antes de matricular");
 			}
 			break;
 		case 5:
@@ -88,7 +87,7 @@ public class SistemaAcademico {
 					}
 				}
 			} else {
-				System.out.println("Aluno n√£o cadastrado.Por favor  cadastrar antes de matricular");
+				System.out.println("Aluno n„o cadastrado.Por favor  cadastrar antes de matricular");
 			}
 			break;
 		case 6:
@@ -145,18 +144,24 @@ public class SistemaAcademico {
 
 	public static void cadastrarAluno(Aluno aluno) {
 		
+		int aux = 0;
 		for(int i=0;i<alunos.length;i++){
 
 			if(alunos[i]== null){
 				alunos[i]= aluno;
 				System.out.printf("Aluno cadastrado com sucesso\n\n\n\n");
+				aux = 1;
 				break;
 			}
+		}
+		
+		if(aux == 0) {
+			System.out.println("O numero maximo de alunos j· foi cadastrado");
 		}
 	}
 
 	public static void excluirAlunoPorNome(String nome) {
-		//adriel,jose,maria,paulo;
+	
 		Aluno aux;
 		for (int i = 0; i < alunos.length; i++) {
 
@@ -203,7 +208,9 @@ public class SistemaAcademico {
 	}
 
 	public static void imprimirListaDeAlunoseDisciplinas() {
-		for (Aluno aluno : alunos) {
+		
+				
+		for (Aluno aluno : alunos) {  
 			aluno.imprime();
 		}
 		

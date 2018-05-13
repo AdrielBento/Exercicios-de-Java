@@ -32,6 +32,7 @@ public class Aluno {
 
 		for (int k = 0; k < this.disciplinas.length; k++) {
 			if (this.disciplinas[k] != null) {
+				System.out.printf("%s", this.disciplinas[k]);
 				tam++;
 			}
 		}
@@ -50,7 +51,7 @@ public class Aluno {
 		} else if (this.quantidadeDisciplinasPermitidas == 0) {
 			return "Este aluno nao pode ser matriculado em nenhuma disciplina e,por favor,fale com a secretaria\n";
 		} else {
-			return "Quantidade de matriculas excedida.O limite de disciplinas para este aluno e  \n"
+			return tam + "Quantidade de matriculas excedida.O limite de disciplinas para este aluno e  \n"
 					+ this.quantidadeDisciplinasPermitidas
 					+ " disciplinas.Se desejar,cancele a matricula de uma das disciplinas e faca a nova matricula\n";
 
@@ -59,31 +60,19 @@ public class Aluno {
 
 	public String cancelarMatricula(String disciplina) {
 
-		int tam = 0;
-
-		for (int k = 0; k < this.disciplinas.length; k++) {
-			if (this.disciplinas[k] != null) {
-				tam++;
-			}
-		}
-
-		if (tam > 0) {
-			for (int i = 0; i < this.disciplinas.length; i++) {
-				if (this.disciplinas[i] != null) {
-					if (this.disciplinas[i].equals(disciplina)) {
-						for (int j = i + 1; j < this.disciplinas.length; j++) {
-							this.disciplinas[j - 1] = this.disciplinas[j];
-						}
-						this.disciplinas[this.disciplinas.length - 1] = null;
-						return "Cancelamento de matricula da disciplina " + disciplina + " realizado com sucesso.\n";
+		for (int i = 0; i < this.disciplinas.length; i++) {
+			// 1,2,3,4,5,6
+			if (this.disciplinas[i] != null) {
+				if (this.disciplinas[i].equals(disciplina)) {
+					for (int j = i+1; j < this.disciplinas.length; j++) {
+						this.disciplinas[j - 1] = this.disciplinas[j];
 					}
+					this.disciplinas[this.disciplinas.length - 1] = null;
+					return "Cancelamento de matricula da disciplina " + disciplina + " realizado com sucesso.\n";
 				}
 			}
-		} else if (tam < 1) {
-			return "Aluno nao esta matriculado na disciplina,portanto nao e possivel cancelar esta matricula.\n";
 		}
-
-		return " ";
+		return "Aluno nao esta matriculado na disciplina,portanto nao e possivel cancelar esta matricula.\n";
 
 	}
 
@@ -97,7 +86,7 @@ public class Aluno {
 		String var = "";
 		for (String d : this.disciplinas) {
 			if (d != null) {
-				var += "," + d;
+				var += " "+ d;
 			}
 		}
 		return var;
@@ -110,6 +99,7 @@ public class Aluno {
 	/**
 	 * @return the disciplinas
 	 */
+	
 	public String[] getDisciplinas() {
 		return disciplinas;
 	}
