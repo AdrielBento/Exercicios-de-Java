@@ -6,6 +6,11 @@
 <img src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" alt="Front End " width="700"/>
 </div>
 
+## 🔎 Guide :
+* [JDBC](Guide/JDBC.md)
+* [Generics](Guide/Generics.md)
+* [Collections](Guide/Collections.md)
+
 ## 📜Regras :
 
 - Commits de novos trabalhos e exercicios resolvidos ✔️
@@ -18,7 +23,8 @@
 
 - Adriel - 👦🏾
 
-## 📚Dicas:
+## 📚Dicas:  
+
 
 > ## 🔤 Formatação no output
 
