@@ -7,9 +7,11 @@
 </div>
 
 ## 🔎 Guide :
-* [JDBC](Guide/JDBC.md)
-* [Generics](Guide/Generics.md)
-* [Collections](Guide/Collections.md)
+
+- [JDBC](Guide/JDBC.md)
+- [Generics](Guide/Generics.md)
+- [Collections](Guide/Collections.md)
+- [Classe Aninhada,Anônima e Wrapper](Guide/TiposDeClasses.md)
 
 ## 📜Regras :
 
@@ -23,8 +25,7 @@
 
 - Adriel - 👦🏾
 
-## 📚Dicas:  
-
+## 📚Dicas:
 
 > ## 🔤 Formatação no output
 
