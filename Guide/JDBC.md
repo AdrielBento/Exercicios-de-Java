@@ -130,6 +130,26 @@ int re = pstmt.executeUpdate();
 pstmt.close();
 ```
 
+#### PreparedStatement
+
+Ao criar uma `PreparedStatement` é possivel passar um segundo paramêtro na função `prepareStatement` da Connection.
+
+```java
+con.prepareStatement(stmtInserir,PreparedStatement.RETURN_GENERATED_KEYS);
+```
+
+O `PreparedStatement.RETURN_GENERATED_KEYS` defini que após uma inserção,seja retornado as chaves primárias criadas no banco de dados.
+
+**Pegando as chaves criadas**:
+
+```java
+/*Pega a primeira chave*/
+stmt.executeUpdate();
+ResultSet rs = stmt.getGeneratedKeys();
+rs.next();
+return rs.getInt(1);
+```
+
 ## Execute Query e Update
 
 O `executeUpdate()` deve ser realizado com você utilizar operações que modifique o estado do Banco de Dados como: **Update,Delete e Insert**.  
