@@ -13,14 +13,6 @@
 - [Collections](Guide/Collections.md)
 - [Classe Aninhada,Anônima e Wrapper](Guide/TiposDeClasses.md)
 
-## 📜Regras :
-
-- Commits de novos trabalhos e exercicios resolvidos ✔️
-- Lista de exercicios de Java para serem resolvidos ✔️
-- Commits com novas explicações ✔️
-- Fazer commits com bugs ❌
-- Fazer commits de outras linguagens ❌
-
 ## 🤖 Contribuidores :
 
 - Adriel - 👦🏾
